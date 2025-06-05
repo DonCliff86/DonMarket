@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase | Your Modern E-Commerce Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand" onclick="navigateTo('home')">ShopEase</div>
+        <ul class="navbar-links">
+            <li><a href="#" onclick="navigateTo('home')">Home</a></li>
+            <li><a href="#" onclick="navigateTo('shop')">Shop</a></li>
+            <li><a href="#" onclick="navigateTo('contact')">Contact</a></li>
+            <li><a href="#" onclick="toggleCart()">Cart <span id="cart-count-badge">0</span></a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+    </nav>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <a href="#" onclick="navigateTo('home')">Home</a>
+        <a href="#" onclick="navigateTo('shop')">Shop</a>
+        <a href="#" onclick="navigateTo('contact')">Contact</a>
+        <a href="#" onclick="toggleCart()">Cart <span id="cart-count-badge-mobile">0</span></a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home-section" class="section active">
+            <div class="hero">
+                <div class="hero-text">
+                    <h1>Welcome to ShopEase</h1>
+                    <p>Your one-stop shop for all your favorite products. Enjoy seamless shopping, fast delivery, and the best prices!</p>
+                    <button onclick="navigateTo('shop')" class="primary-btn">Shop Now</button>
+                </div>
+                <div class="hero-img">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="E-commerce shopping">
+                </div>
+            </div>
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid" id="featured-products"></div>
+        </section>
+
+        <!-- Shop Section -->
+        <section id="shop-section" class="section">
+            <h2 class="section-title">Shop Products</h2>
+            <div class="shop-controls">
+                <select id="category-filter">
+                    <option value="All">All Categories</option>
+                </select>
+                <input type="text" id="search-box" placeholder="Search products...">
+            </div>
+            <div class="products-grid" id="shop-products"></div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="section">
+            <h2 class="section-title">Contact Us</h2>
+            <form class="contact-form" id="contact-form">
+                <input type="text" placeholder="Your Name" name="name" required>
+                <input type="email" placeholder="Your Email" name="email" required>
+                <textarea placeholder="Your Message" name="message" required></textarea>
+                <button type="submit" class="primary-btn">Send Message</button>
+                <div id="contact-message"></div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button onclick="toggleCart()" class="close-cart">&times;</button>
+        </div>
+        <ul id="cart-items"></ul>
+        <div class="cart-summary">
+            <div class="cart-total-row">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button id="checkout-btn" class="primary-btn">Checkout</button>
+        </div>
+    </aside>
+
+    <!-- Product Detail Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content" id="modal-content">
+            <!-- Product details will be injected here -->
+        </div>
+    </div>
+
+    <!-- Overlay for modal and cart -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 ShopEase. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" onclick="navigateTo('home')">Home</a> |
+                <a href="#" onclick="navigateTo('shop')">Shop</a> |
+                <a href="#" onclick="navigateTo('contact')">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
